@@ -1,13 +1,19 @@
 function X=pregunta1()
   tiempos1 = [];
   tiempos2 = [];
-  for i=5:12
+  for i=2:3%5:12
     A=rand(2^i, 2^(i-1));
     tic
     [U,S,V] = svd(A);
+    display(U);
+    display(S);
+    display(V);
     tiempos1 = [tiempos1, toc];
     tic
     [Ur,Sr,Vr] = svdCompact(A);
+    display(Ur);
+    display(Sr);
+    display(Vr);
     tiempos2 = [tiempos2, toc];
   endfor
 
