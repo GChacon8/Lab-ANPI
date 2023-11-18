@@ -44,26 +44,6 @@ def svdCompact(A):
 
     return Ur, Sr, Vr
 
-'''
-def pregunta1():
-
-    A = np.array([[1, 2],
-                          [3, 4],
-                          [5, 6],
-                          [7, 8]])
-
-    U, S, V = np.linalg.svd(A, full_matrices=False)
-    print("Matriz U: ", U, end= "\n")
-    print("Matriz S: ", S, end= "\n")
-    print("Matriz V: ", U, end= "\n")
-      
-
-    Ur, Sr, Vr = svdCompact(A)
-    print("Matriz Ur: ", Ur, end= "\n")
-    print("Matriz Sr: ", Sr, end= "\n")
-    print("Matriz Vr: ", Ur, end= "\n")
-''' 
-
 def pregunta1():
     k_values = [5, 6, 7, 8, 9, 10, 11, 12]
 
@@ -75,12 +55,10 @@ def pregunta1():
 
         start_time = time.time()
         Ur, Sr, Vr = np.linalg.svd(A, full_matrices=False)
-        print(Ur, Sr, Vr)
         tiempos_funcion1[i] = time.time() - start_time
 
         start_time = time.time()
         Ur, Sr, Vr = svdCompact(A)
-        print(Ur, Sr, Vr)
         tiempos_funcion2[i] = time.time() - start_time
 
     plt.plot(k_values, tiempos_funcion1, '-o', label='SVD Python')
